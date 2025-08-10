@@ -1,0 +1,33 @@
+.splash-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: 100vh;
+  padding: 2vmin 3vmin;
+}
+
+.scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50; /* above content; adjust if you have modals */
+  mix-blend-mode: screen;
+  opacity: var(--scanlines-alpha, .25); /* JS updates this */
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,.08) 0 1px,
+      transparent 1px 6px
+    );
+  /* animation: scanlines-move 6s linear infinite; */
+  transition: opacity 120ms linear; /* smooth out small jumps */
+}
+/* @keyframes scanlines-move { to { transform: translateY(100%); } } */
+
+.sub {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
