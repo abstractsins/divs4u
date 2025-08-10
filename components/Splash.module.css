@@ -1,33 +1,40 @@
 .splash-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  height: 100vh;
-  padding: 2vmin 3vmin;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+    padding: 2vmin 3vmin;
 }
 
+/* scan moves from -100% (above) -> 100% (below), then resets off-screen */
 .scanlines {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 50; /* above content; adjust if you have modals */
+  z-index: 50;
   mix-blend-mode: screen;
-  opacity: var(--scanlines-alpha, .25); /* JS updates this */
+
+  /* knobs */
+  --scan-speed: 10s;                      /* slower/faster pass */
+  opacity: var(--scanlines-alpha, .25);
+
   background:
     repeating-linear-gradient(
       to bottom,
-      rgba(255,255,255,.08) 0 1px,
+      rgba(255,255,255, .25) 0 1px,
       transparent 1px 6px
     );
-  /* animation: scanlines-move 6s linear infinite; */
-  transition: opacity 120ms linear; /* smooth out small jumps */
-}
-/* @keyframes scanlines-move { to { transform: translateY(100%); } } */
 
-.sub {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  transform: translateY(-100%);          /* start fully above the viewport */
+  animation: scan-through var(--scan-speed) linear infinite;
+  will-change: transform;
+  transition: opacity 120ms linear;
 }
+
+@keyframes scan-through {
+  from { transform: translateY(-100%); } /* off-screen top */
+  to   { transform: translateY(100%); }  /* off-screen bottom */
+}
+

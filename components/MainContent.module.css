@@ -1,0 +1,37 @@
+.main-content {
+    min-height: 100vh;
+}
+
+.about-container {
+    height: 100vh;
+}
+
+.section-title {}
+
+.about-body {
+    display: flex;
+}
+
+.bio-pic {
+    background-image: url('../public/images/bio-pic.webp');
+    /* mix-blend-mode: difference; */
+    filter: contrast(1.1) brightness(.9);
+    margin: 10vh 10vw;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border: px solid #49233D;
+    height: 400px;
+    width: 400px;
+}
+
+.about-text-container {
+    background-color: ;
+    /* background-color: transparent; */
+    border: 1px solid transparent;
+    border: 3px solid #18999E;
+    height: 550px;
+    width: 50vw;
+    margin-top: 5vh;
+    border-radius: 20px;
+}

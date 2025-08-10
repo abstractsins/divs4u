@@ -65,7 +65,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${sixtyfour.variable} ${arbutus.variable} ${geistSans.variable} ${geistMono.variable} antialiased`} >
+      <body id="hero" className={`${sixtyfour.variable} ${arbutus.variable} ${geistSans.variable} ${geistMono.variable} antialiased`} >
         {children}
       </body>
     </html>

@@ -1,5 +1,6 @@
 .boot-wrap {
   position: relative; /* keeps your structure; no overlay here */
+  margin: 5vh;
 }
 
 .boot-line {
@@ -92,6 +93,11 @@
 }
 
 @media screen and (max-width: 1800px) {
-  .boot-letter { font-size: 22pt; }
-  .boot-cursor { font-size: 22pt; }
+  .boot-letter { font-size: 4rem; }
+  .boot-cursor { font-size: 4rem; }
+}
+
+@media screen and (max-width: 1200px) {
+  .boot-letter { font-size: 32pt; }
+  .boot-cursor { font-size: 32pt; }
 }

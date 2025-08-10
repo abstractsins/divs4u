@@ -1,0 +1,82 @@
+.sub-container {
+    margin: 1vh 5vw;
+}
+
+/* each subtitle line “boots” as a unit */
+.sub {
+    width: 100%;
+    margin-top: clamp(2rem, 4.4vh, 4.4rem);
+    font-size: clamp(1.1rem, 3.2vw, 2.2rem);
+    letter-spacing: 0.06em;
+
+    opacity: .06;
+    /* off state */
+    filter: brightness(.8) blur(.6px);
+    transform: translateY(6px);
+    color: #e7e7e700;
+
+
+    animation:
+        lineBoot 1.2s ease-out var(--ld, 0ms) forwards,
+        lineIdle 4s steps(1, end) calc(var(--ld, 0ms) + 1400ms) infinite;
+}
+
+@keyframes lineBoot {
+    0% {
+        opacity: .06;
+        filter: brightness(.8) blur(.6px);
+        transform: translateY(6px);
+        text-shadow: none;
+    }
+
+    35% {
+        opacity: .7;
+        filter: brightness(1.05) blur(.3px);
+    }
+
+    50% {
+        opacity: .35;
+        filter: brightness(.95) blur(.2px);
+    }
+
+    75% {
+        opacity: .9;
+        filter: brightness(1.08) blur(.15px);
+    }
+
+    100% {
+        opacity: 1;
+        filter: none;
+        transform: translateY(0);
+        color: #e7e7e7;
+        text-shadow:
+            0 0 .06rem rgba(255, 255, 255, .55),
+            0 0 .20rem rgba(255, 255, 255, .15);
+    }
+}
+
+/* subtle idle blip so it feels alive */
+@keyframes lineIdle {
+
+    0%,
+    97%,
+    100% {
+        text-shadow:
+            0 0 .05rem rgba(255, 255, 255, .45),
+            0 0 .16rem rgba(255, 255, 255, .12);
+        opacity: .98;
+    }
+
+    98% {
+        text-shadow: none;
+        opacity: .92;
+    }
+}
+
+@media screen and (max-width: 1800px) {
+  .sub { font-size: 2rem; }
+}
+
+@media screen and (max-width: 1200px) {
+  .sub { font-size: 1.25rem; }
+}
