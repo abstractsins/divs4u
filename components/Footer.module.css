@@ -1,0 +1,7 @@
+.footer {
+    background-color: var(--color-ash);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 1vh 2vw;
+}

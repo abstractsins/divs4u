@@ -66,6 +66,16 @@
     padding: 2vh 0;
 }
 
+.contact-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 2vh 1vw;
+    margin: 2vh 1vw;
+}
+
 @media (max-width: 768px) {
     .bio-pic {
         margin-inline: auto;

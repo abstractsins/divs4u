@@ -9,6 +9,7 @@ import Header from './Header';
 import About from './sections/About';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
+import Footer from './Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,6 +46,7 @@ export default function MainContent() {
             <About />   
             <Projects />
             <Contact />
+            <Footer />
         </div>
     );
 }
