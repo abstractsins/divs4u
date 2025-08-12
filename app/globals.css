@@ -12,6 +12,8 @@
   --color-dusk: #201D30;
 
   --header-h: 72px;
+
+  color-scheme: dark !important; 
 }
 
 * {
