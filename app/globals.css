@@ -1,9 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-
   --color-plum-semi: rgba(218, 32, 156, 0.62);
   --color-plum: #9E1871;
   --color-mustard: #9E8A18;
@@ -37,6 +34,14 @@
 }
 
 @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+
+@media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
