@@ -31,7 +31,7 @@ export default function AboutBio() {
         I turn fuzzy ideas into shipped features: design the schema, build the API,
         wire the UI, and deploy without drama. My day-to-day is
         <strong> Next.js (App Router)</strong>, <strong>Node</strong>, and
-        <strong> Postgres/Prisma</strong>, with charts in <strong>Recharts </strong> 
+        <strong> Postgres/Prisma</strong>, with charts in <strong>Recharts </strong>
         and CI/CD on <strong>Vercel/Railway</strong>. I come from a solutions/support
         background, so I debug with empathy, leave clear docs, and value communication.
       </p>

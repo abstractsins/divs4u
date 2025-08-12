@@ -4,7 +4,25 @@ import styles from './ProjectCard.module.css';
 import recipePic from '@/public/images/recipe-thumbnail.webp';
 
 import { Pacifico } from 'next/font/google';
-import { SiGithub } from "react-icons/si";
+
+import { GiWeightLiftingUp } from "react-icons/gi";
+import { FaNodeJs, FaReact } from "react-icons/fa";
+import { BiLogoTypescript, BiLogoPostgresql } from "react-icons/bi";
+import { PiChefHatLight } from "react-icons/pi";
+import {
+    RiNextjsFill,
+    RiJavascriptLine,
+    RiVercelFill
+} from "react-icons/ri";
+
+import {
+    SiGithub,
+    SiExpress,
+    SiPrisma,
+    SiHtml5,
+    SiCss3,
+    SiRailway
+} from "react-icons/si";
 import { MdOutlineOndemandVideo } from "react-icons/md";
 
 import Link from 'next/link';
@@ -33,13 +51,29 @@ export default function ProjectRecipes({ id }: Props) {
             </div>
 
             <div className={styles['right-half']}>
-                <div className={styles['titles']}>
-                    <h2 className='font-pacifico'>Recipe Box</h2>
-                    <h3>A Next.js Database Dashboard</h3>
+                <div className={styles['middle']}>
+
+                    <div className={styles['titles']}>
+                        <h2 className='font-pacifico'>Recipe Box</h2>
+                        <h3>Serverless Next.js Dashboard</h3>
+                    </div>
+
+                    <div className={styles['logos']}>
+                        <span>
+                            <RiNextjsFill title='Next.js' />
+                            <BiLogoTypescript title='TypeScript' />
+                            <RiVercelFill title='Vercel' />
+                            <SiPrisma title='Prisma' />
+                            <SiRailway title='Railway' />
+                        </span>
+                    </div>
+
                 </div>
+
                 <div className={styles['links']}>
-                    <span><Link href='https://www.youtube.com/watch?v=R15gpBx2NWo' target='new'><MdOutlineOndemandVideo /> Video Link</Link></span>
-                    <span><Link href='https://github.com/abstractsins/PuckDropper' target='new'><SiGithub /> Github Repo</Link></span>
+                    <span className={styles['status']}>Current Project</span>
+                    <span><Link href='https://recipes-56gtc1c5z-divs4us-projects.vercel.app/login' target='new'><PiChefHatLight /> Preview Build</Link></span>
+                    <span><Link href='https://github.com/abstractsins/recipes' target='new'><SiGithub /> Repo</Link></span>
                 </div>
             </div>
 

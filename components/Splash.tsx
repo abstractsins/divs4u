@@ -81,7 +81,7 @@ export default function Splash() {
           )}
         </div>
 
-        {(hasBooted || isPowerOn) && (
+        {(hasBooted && isPowerOn) && (
           <>
             <SplashSubTitles isPowerOn={isPowerOn} name={NAME} />
             <div className='flex w-[100%]' ref={ref}>

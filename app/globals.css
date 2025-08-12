@@ -1,12 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --color-plum-semi: rgba(218, 32, 156, 0.62);
   --color-plum: #9E1871;
+  --color-plum-semi: rgba(218, 32, 156, 0.62);
   --color-mustard: #9E8A18;
+  --color-honey: #D1A625;
   --color-eggplant: #4A233D;
+  --color-green-bright: #0ED54E;
+  --color-teal: #18999e;
+  --color-pink: #FB9CDB;
   --color-blue: #3F8DF3;
   --color-dusk: #201D30;
+  --color-ash: #3C3433;
 
   --header-h: 72px;
 
@@ -89,6 +94,10 @@ a {
 a:hover {
   color: lightcyan;
   background-color: #1d1d1dc2;
+}
+
+a:active {
+  filter: invert();
 }
 
 section {

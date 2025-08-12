@@ -1,6 +1,6 @@
 .project-card-wrapper {
     display: flex;
-    background-color: var(--color-eggplant);
+    background-color: var(--color-dusk);
     border-radius: 20px;
     width: clamp(100px, 65vw, 1500px);
     height: clamp(100px, 25vh, 1500px);
@@ -48,23 +48,52 @@
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    padding: 2vh 1vw;
+    padding: 1.5vh 1vw;
+    width: clamp(30%, 35%, 40%);
 }
 
 .links span {
     display: flex;
     align-items: center;
     height: 100%;
-    font-size: clamp(12pt, 1vw, 1.75rem);
+    font-size: clamp(12pt, 1vw, 1.5rem);
 }
 
 .links a {
+    border: 1px solid rgba(192, 192, 192, 0.5);
+    border-radius: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
+.links a:hover {
+    /* border: 1px solid rgba(192, 192, 192, 0.5); */
+    border: 1px solid transparent;
+}
+
+
 .links svg {
     display: inline-flex;
     align-self: center;
+}
+
+.logos {
+    font-size: clamp(12pt, 1vw + 1.5rem, 2rem);
+}
+
+.logos span {
+    display: flex;
+    gap: 1vw;
+}
+
+.logos svg {
+    display: inline-flex;
+    color: var(--color-honey);
+}
+
+span.status {
+    color: var(--color-mustard);
+    font-size: clamp(12pt, .75vw, 26pt);
+    font-style: italic;
 }

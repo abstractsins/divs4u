@@ -82,8 +82,8 @@ export default function Projects() {
             <h2 className={` ${styles['section-title']}`}>Projects</h2>
             <div className={styles['projects-body']}>
                 <ProjectGainsDB id="project-1" />   
-                <ProjectPuckDropper id="project-2" />   
-                <ProjectRecipes id="project-3" />
+                <ProjectRecipes id="project-2" />
+                <ProjectPuckDropper id="project-3" />   
             </div>
         </section>
     );
