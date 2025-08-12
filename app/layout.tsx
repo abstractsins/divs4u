@@ -11,10 +11,16 @@ import "./globals.css";
 //* FONTS
 import {
   Geist,
+  Montserrat,
   Geist_Mono,
   Arbutus_Slab,
   Sixtyfour
 } from "next/font/google";
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,7 +48,6 @@ const sixtyfour = Sixtyfour({
 });
 
 
-
 //* ------------------------------------------------------ //
 //* ----------------------- EXPORT ----------------------- //
 //* ------------------------------------------------------ //
@@ -65,7 +70,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body id="hero" className={`${sixtyfour.variable} ${arbutus.variable} ${geistSans.variable} ${geistMono.variable} antialiased`} >
+      <body id="hero" className={`${montserrat.variable} ${sixtyfour.variable} ${arbutus.variable} ${geistSans.variable} ${geistMono.variable} antialiased`} >
         {children}
       </body>
     </html>

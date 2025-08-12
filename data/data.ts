@@ -1,0 +1,23 @@
+export const aboutSkillsType: string[] = [
+    'Full Stack Development',
+    'TypeScript • Next.js • Node',
+    'Vanilla JavaScript • JQuery',
+    'Solutions Engineering',
+    'SQL • Postgres • Prisma',
+    'Support Engineering',
+    'Recharts • Gsap • UI/UX',
+    'CI/CD • Vercel • Railway',
+    'Game Development • Multimedia',
+    'Express.js • Tailwind • Web Design',
+    'Terminal Emulation Parsing',
+    'Serverless functions • APIs',
+    'Phaser.js • React • Vue.js',
+    'Modern Web Frameworks',
+    'HTML • CSS • JQuery • PHP',
+    'Software Engineering', 
+    'Java • Kotlin • C++ • C# • .NET',
+    'Ivanti Velocity • SAP Modernization',
+    'Fontend Development',
+    'Backend Development',
+    'Bash • Powershell Scripting'
+]

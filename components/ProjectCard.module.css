@@ -1,0 +1,70 @@
+.project-card-wrapper {
+    display: flex;
+    background-color: var(--color-eggplant);
+    border-radius: 20px;
+    width: clamp(100px, 65vw, 1500px);
+    height: clamp(100px, 25vh, 1500px);
+    transform: translateX(-100vw);
+    justify-content: space-between;
+    margin: 2vh;
+    padding: 2vh 1vw;
+}
+
+.left-half {
+    display: flex;
+    width: 80%;
+    gap: 1vw;
+}
+
+.left-half img {
+    border-radius: 20px;
+    height: 100%;
+    width: auto;
+}
+
+.titles {
+    display: flex;
+    margin: 2vh 1vw;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titles h2 {
+    font-size: clamp(18pt, 2vw, 42pt);
+}
+
+.titles h3 {
+    font-size: clamp(14pt, 1.5vw, 22pt);
+}
+
+.right-half {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links {
+    background-color: var(--background);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 2vh 1vw;
+}
+
+.links span {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: clamp(12pt, 1vw, 1.75rem);
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.links svg {
+    display: inline-flex;
+    align-self: center;
+}

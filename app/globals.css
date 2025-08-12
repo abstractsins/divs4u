@@ -3,15 +3,35 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --color-plum-semi: rgba(218, 32, 156, 0.62);
+  --color-plum: #9E1871;
+  --color-mustard: #9E8A18;
+  --color-eggplant: #4A233D;
+  --color-blue: #3F8DF3;
+  --color-dusk: #201D30;
+
+  --header-h: 72px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --font-mont: var(--font-montserrat);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-title: var(--font-sixtyfour);
   --font-slab: var(--font-arbutus-slab);
+  --font-gains: var(--font-gains);
+  --font-puck: var(--font-rubik-glitch);
+  --font-pacifico: var(--font-pacifico);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,11 +54,11 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mont), Arial, Helvetica, sans-serif;
 }
 
 header {
-  background-color: rgba(218, 32, 156, 0.62);
+  background-color: var(--color-plum-semi);
   position: sticky;
   padding: 15px;
   display: flex;
@@ -46,7 +66,7 @@ header {
   align-items: center;
   gap: 50px;
   width: 100%;
-  height: 60px;
+  height: var(--header-h);
   top: 0;
   z-index: 2;
   backdrop-filter: blur(15px) saturate(150%);
@@ -67,7 +87,20 @@ a:hover {
 section {
   display: flex;
   flex-direction: column;
+  position: relative;
   padding: 20px;
   scroll-margin-top: 60px;
-  min-height: 100vh;
+  height: 100%;
+  min-height: calc(100vh - var(--header-h));
+}
+
+.typebox-container {
+  border-radius: 20px;
+  margin: 5vh 0;
+}
+
+/* #project-3 {background-image: url(../public/images/);} */
+
+* {
+  /* border: 1px solid red; */
 }

@@ -4,7 +4,7 @@
 
 /* each subtitle line “boots” as a unit */
 .sub {
-    width: 100%;
+    /* width: 100%; */
     margin-top: clamp(2rem, 4.4vh, 4.4rem);
     font-size: clamp(1.1rem, 3.2vw, 2.2rem);
     letter-spacing: 0.06em;
@@ -73,10 +73,124 @@
     }
 }
 
+.subOff {
+    animation: lineShutdown 900ms steps(20, end) forwards !important;
+}
+
+@keyframes lineShutdown {
+    0% {
+        opacity: 1;
+        color: #e7e7e7;
+        filter: none;
+        text-shadow: 0 0 .06rem rgba(255, 255, 255, .55), 0 0 .20rem rgba(255, 255, 255, .15);
+    }
+
+    15% {
+        opacity: .5;
+        text-shadow: none;
+    }
+
+    30% {
+        opacity: .95;
+        text-shadow: 0 0 .05rem rgba(255, 255, 255, .45), 0 0 .16rem rgba(255, 255, 255, .12);
+    }
+
+    55% {
+        opacity: .4;
+        filter: blur(.15px);
+    }
+
+    80% {
+        opacity: .18;
+        color: #9bbd9b;
+        filter: blur(.28px);
+        text-shadow: 0 0 .08rem rgba(200, 255, 200, .18);
+    }
+
+    100% {
+        opacity: 0;
+        color: #1a1a1a;
+        filter: blur(.36px);
+        text-shadow: none;
+    }
+}
+
 @media screen and (max-width: 1800px) {
-  .sub { font-size: 2rem; }
+    .sub {
+        font-size: 2rem;
+    }
 }
 
 @media screen and (max-width: 1200px) {
-  .sub { font-size: 1.25rem; }
+    .sub {
+        font-size: 1.25rem;
+    }
+}
+
+.command {
+    font-size: clamp(10px, 1vw, 36pt);
+    animation:
+        commandBoot 1.2s ease-out var(--ld, 0ms) forwards,
+        commandIdle 3s steps(1, end) calc(var(--ld, 0ms) + 1400ms) infinite;
+}
+
+.instruction-wrapper {
+    margin-top: 5vh;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+
+@keyframes commandBoot {
+    0% {
+        opacity: .06;
+        filter: brightness(.8) blur(.6px);
+        transform: translateY(6px);
+        text-shadow: none;
+    }
+
+    35% {
+        opacity: .7;
+        filter: brightness(1.05) blur(.3px);
+    }
+
+    50% {
+        opacity: .35;
+        filter: brightness(.95) blur(.2px);
+    }
+
+    75% {
+        opacity: .9;
+        filter: brightness(1.08) blur(.15px);
+    }
+
+    100% {
+        opacity: 1;
+        filter: none;
+        transform: translateY(0);
+        color: #e7e7e7;
+        text-shadow:
+            0 0 .13rem #7CFF7C,
+            0 0 .34rem #43ff43,
+            0 0 .75rem #1aff1a;
+    }
+}
+
+@keyframes commandIdle {
+
+    0%,
+    97%,
+    100% {
+        text-shadow:
+            0 0 .13rem #7CFF7C,
+            0 0 .34rem #43ff43,
+            0 0 .75rem #1aff1a;
+        opacity: 1;
+    }
+
+    98% {
+        text-shadow: none;
+        opacity: .93;
+    }
 }

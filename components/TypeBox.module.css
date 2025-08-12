@@ -1,0 +1,36 @@
+.bio-skills-typebox-container {
+    background: var(--background);
+    border: 3px solid var(--color-mustard);
+    box-sizing: border-box;
+    border-radius: 16px;
+    padding: 15px;
+    overflow: auto;
+    /* needed for auto-scroll */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    transition: height 280ms ease-in-out;
+    width: 415px;
+}
+
+.bio-skills-typebox-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.lines {
+    white-space: pre-wrap;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+    line-height: 1.5;
+    color: #e8e8e8;
+}
+
+.cursor {
+    display: inline-block;
+    width: 0.75ch;
+    height: 0.17em;
+    background: var(--color-mustard);
+    border-radius: 2px;
+    transform: translateY(0.25em);
+    margin-left: 0.1ch;
+}

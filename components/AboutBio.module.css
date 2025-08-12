@@ -1,0 +1,46 @@
+/* paragraph */
+.lede {
+    margin: 0;
+    font-size: clamp(.4rem, 2.5vw - .6rem, 2.5rem);
+    line-height: 2;
+}
+
+/* bullets */
+.list {
+    margin: 2vh 2vw;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .55rem;
+    font-size: clamp(1rem, 1.25vw - .25rem, 1.5rem);
+    line-height: 1.5;
+}
+
+.main-p {
+    line-height: 1.5;
+    font-size: clamp(1rem, 1.1vw - .10rem, 1.5rem);
+}
+
+.logos-container {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    height: fit-content;
+    gap: 10px;
+    max-width: 10vw;
+    flex-wrap: wrap;
+    font-size: clamp(.2rem, 2.5vw - .6rem, 4rem);
+    color: var(--color-blue);
+}
+
+.main-p strong {
+    color: deeppink;
+}
+
+
+@media (max-width: 768px) {
+    .panel {
+        border-radius: 16px;
+    }
+}
