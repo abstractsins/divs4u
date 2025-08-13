@@ -37,6 +37,7 @@ export default function MainContent() {
 
         // refresh in case images/layout shift after load
         requestAnimationFrame(() => ScrollTrigger.refresh());
+
         return () => ctx.revert();
     }, []);
 
