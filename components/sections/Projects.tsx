@@ -5,11 +5,11 @@ import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import ProjectGainsDB from '../ProjectGainsDB';
-import ProjectPuckDropper from '../ProjectPuckDropper';
+import ProjectGainsDB from './Projects/ProjectGainsDB';
+import ProjectPuckDropper from './Projects/ProjectPuckDropper';
 
 import { useEnterToNext } from '@/hooks/useEnterToNext';
-import ProjectRecipes from '../ProjectRecipes';
+import ProjectRecipes from './Projects/ProjectRecipes';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,7 +20,7 @@ export default function Projects() {
     useEffect(() => {
         const ctx = gsap.context(() => {
             // set initial state (so it’s invisible until triggered)
-            gsap.set(['#project-1', '#project-2', '#project-3'], { autoAlpha: 0, y: 24, filter: 'blur(6px)' });
+            gsap.set('.projectMajorCard', { autoAlpha: 0, y: 24, filter: 'blur(6px)' });
 
             gsap.to('#project-1', {
                 autoAlpha: 1,
@@ -81,9 +81,9 @@ export default function Projects() {
         <section id="projects" className={styles["projects-container"]}>
             <h2 className={` ${styles['section-title']}`}>Projects</h2>
             <div className={styles['projects-body']}>
-                <ProjectGainsDB id="project-1" />   
-                <ProjectRecipes id="project-2" />
-                <ProjectPuckDropper id="project-3" />   
+                <ProjectGainsDB id="project-1" className='projectMajorCard'/>   
+                <ProjectRecipes id="project-2" className='projectMajorCard'/>
+                <ProjectPuckDropper id="project-3" className='projectMajorCard'/>   
             </div>
         </section>
     );

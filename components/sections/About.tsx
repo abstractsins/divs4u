@@ -10,12 +10,12 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import styles from '../MainContent.module.css'
-import TypeBox from '../TypeBox';
+import TypeBox from './About/TypeBox';
 
 import { aboutSkillsType } from '@/data/data';
 import { useEnterToNext } from '@/hooks/useEnterToNext';
 
-import AboutBio from '../AboutBio';
+import AboutBio from './About/AboutBio';
 
 gsap.registerPlugin(ScrollTrigger);
 

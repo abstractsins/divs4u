@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from './ProjectCard.module.css';
+import styles from './ProjectMajorCard.module.css';
 
 import puckPic from '@/public/images/puck-thumbnail.webp';
 
@@ -18,6 +18,7 @@ const puck = Rubik_Glitch({
 
 interface Props {
     id: string;
+    className: string;
 }
 
 export default function ProjectPuckDropper({ id }: Props) {

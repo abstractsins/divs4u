@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from './ProjectCard.module.css';
+import styles from './ProjectMajorCard.module.css';
 
 import gainsPic from '@/public/images/gains-thumbnail.webp';
 
@@ -7,21 +7,17 @@ import { Tourney } from 'next/font/google';
 
 //* ICONS
 import { GiWeightLiftingUp } from "react-icons/gi";
-import { FaNodeJs, FaReact } from "react-icons/fa";
+import { FaNodeJs } from "react-icons/fa";
 import { BiLogoTypescript, BiLogoPostgresql } from "react-icons/bi";
 
 import {
     RiNextjsFill,
-    RiJavascriptLine,
     RiVercelFill
 } from "react-icons/ri";
 
 import {
     SiGithub,
     SiExpress,
-    SiPrisma,
-    SiHtml5,
-    SiCss3,
     SiRailway
 } from "react-icons/si";
 
@@ -36,6 +32,7 @@ const gains = Tourney({
 
 interface Props {
     id: string;
+    className: string;
 }
 
 export default function ProjectGainsDB({ id }: Props) {

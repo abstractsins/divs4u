@@ -3,14 +3,15 @@
 import styles from './ContactForm.module.css';
 
 import { useState, useEffect, useRef } from 'react';
-import Loader from './Loader';
+import Loader from '@/components/ui/Loader';
 
 import emailjs from '@emailjs/browser';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ScreenGuard from './ScreenGuard';
-import Loaded from './Loaded';
+
+import ScreenGuard from '@/components/ui/ScreenGuard';
+import Loaded from '@/components/ui/Loaded';
 
 
 gsap.registerPlugin(ScrollTrigger);

@@ -73,6 +73,7 @@
 }
 
 .submit {
+    font-size: clamp(12pt, 1vw, 22pt);
     padding: 1vh 1vw;
     width: fit-content;
     border-radius: 10px;
@@ -87,12 +88,6 @@
 
 .submit.valid:active {
     filter: invert();
-}
-
-.message {
-    font-size: clamp(12pt, 0.75vw, 22pt);
-    height: 112px;
-    max-height: 112px;
 }
 
 .submit.invalid {
@@ -114,4 +109,10 @@
 .error-text {
     color: tomato;
     font-size: clamp(10pt, .5vw, 16pt);
+}
+
+.message {
+    font-size: clamp(12pt, 0.75vw, 22pt);
+    height: 112px;
+    max-height: 112px;
 }

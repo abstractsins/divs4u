@@ -1,4 +1,4 @@
-import styles from './ProjectCard.module.css';
+import styles from './ProjectMajorCard.module.css';
 
 interface Props {
     id: string;

@@ -1,29 +1,23 @@
 import Image from 'next/image';
-import styles from './ProjectCard.module.css';
+import styles from './ProjectMajorCard.module.css';
 
 import recipePic from '@/public/images/recipe-thumbnail.webp';
 
 import { Pacifico } from 'next/font/google';
 
-import { GiWeightLiftingUp } from "react-icons/gi";
-import { FaNodeJs, FaReact } from "react-icons/fa";
 import { BiLogoTypescript, BiLogoPostgresql } from "react-icons/bi";
 import { PiChefHatLight } from "react-icons/pi";
+
 import {
     RiNextjsFill,
-    RiJavascriptLine,
     RiVercelFill
 } from "react-icons/ri";
 
 import {
     SiGithub,
-    SiExpress,
     SiPrisma,
-    SiHtml5,
-    SiCss3,
     SiRailway
 } from "react-icons/si";
-import { MdOutlineOndemandVideo } from "react-icons/md";
 
 import Link from 'next/link';
 
@@ -36,6 +30,7 @@ const pacifico = Pacifico({
 
 interface Props {
     id: string;
+    className: string;
 }
 
 export default function ProjectRecipes({ id }: Props) {

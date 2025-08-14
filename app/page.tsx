@@ -1,5 +1,5 @@
 import MainContent from "@/components/MainContent";
-import Splash from "@/components/Splash";
+import Splash from "@/components/splash/Splash";
 
 export default function Home() {
   return (
