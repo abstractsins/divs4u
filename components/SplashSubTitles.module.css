@@ -128,7 +128,7 @@
 }
 
 .command {
-    font-size: clamp(10px, 1vw, 36pt);
+    font-size: clamp(14pt, 1vw, 36pt);
     animation:
         commandBoot 1.2s ease-out var(--ld, 0ms) forwards,
         commandIdle 3s steps(1, end) calc(var(--ld, 0ms) + 1400ms) infinite;

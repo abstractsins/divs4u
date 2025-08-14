@@ -1,0 +1,30 @@
+div.loader {
+    position: absolute;
+    left: 0;
+    height: 11vh;
+    background-color: var(--color-green-bright);
+    color: var(--background);
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transform: rotateY(180deg);
+    user-select: none;
+}
+
+.login-page div.loader {
+    top: 25%;
+    height: 13vh;
+}
+
+span.load-text {
+    font-family: var(--font-parkinsans), sans-serif;
+    font-size: 20pt;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.loader {
+    top: 39%;
+}

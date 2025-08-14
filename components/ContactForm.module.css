@@ -34,7 +34,7 @@
 }
 
 .wrapper-front {
-    width: 90%;
+    width: 80%;
     transform: rotateY(180deg);
 }
 
@@ -50,6 +50,10 @@
     padding: .75vh 0.5vw;
     width: 100%;
     font-weight: lighter;
+}
+
+.contact-field:placeholder-shown {
+    font-style: italic;
 }
 
 .form-row {
@@ -69,27 +73,44 @@
 
 .submit {
     padding: 1vh 1vw;
-    cursor: pointer;
-    background-color: var(--color-dusk);
     width: fit-content;
     border-radius: 10px;
     border: 1px solid transparent;
     transition: all 250ms;
 }
 
-.submit:hover {
+.submit.valid:hover {
     background-color: var(--color-eggplant);
     border-color: white;
 }
 
-.submit:active {
+.submit.valid:active {
     filter: invert();
 }
 
 .message {
     font-size: clamp(12pt, 0.75vw, 22pt);
-    /* font-size: clamp(10pt, 1.25vw, 18pt); */
     height: 112px;
     max-height: 112px;
+}
 
+.submit.invalid {
+    /* background-color: darkgray; */
+    background-color: rgb(33, 33, 33);
+    pointer-events: none;
+    color: black;
+}
+
+.submit.valid {
+    background-color: var(--color-dusk);
+    cursor: pointer;
+}
+
+.error-wrapper {
+    margin-left: .75vw;
+}
+
+.error-text {
+    color: tomato;
+    font-size: clamp(10pt, .5vw, 16pt);
 }
