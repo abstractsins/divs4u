@@ -3,15 +3,15 @@
 import styles from './ContactForm.module.css';
 
 import { useState, useEffect, useRef } from 'react';
-import Loader from './Loader';
 
 import emailjs from '@emailjs/browser';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ScreenGuard from './ScreenGuard';
-import Loaded from './Loaded';
 
+import Loader from '@/components/ui/Loader';
+import Loaded from '@/components/ui/Loaded';
+import ScreenGuard from '@/components/ui/ScreenGuard';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,7 +28,6 @@ interface FormError {
     field: keyof ContactForm;
     msg: string;
 }
-
 
 const emptyForm: ContactForm = {
     name: '',

@@ -48,8 +48,8 @@ export default function ProjectPuckDropper({ id, className }: Props) {
                 </div>
                 <div className={styles['links']}>
                     <span className={styles['status']}>Growth Project</span>
-                    <span><Link href='https://www.youtube.com/watch?v=R15gpBx2NWo' target='new'><MdOutlineOndemandVideo /> Video Link</Link></span>
-                    <span><Link href='https://github.com/abstractsins/PuckDropper' target='new'><SiGithub /> Repo</Link></span>
+                    <span><Link href='https://www.youtube.com/watch?v=R15gpBx2NWo' target='_new'><MdOutlineOndemandVideo /> Video Link</Link></span>
+                    <span><Link href='https://github.com/abstractsins/PuckDropper' target='_new'><SiGithub /> Repo</Link></span>
                 </div>
             </div>
 

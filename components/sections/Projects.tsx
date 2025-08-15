@@ -12,6 +12,17 @@ import { useEnterToNext } from '@/hooks/useEnterToNext';
 import ProjectRecipes from './Projects/ProjectRecipes';
 import ProjectMinorCard from './Projects/ProjectMinorCard';
 
+import sammySeal from '@/public/images/sammy1.webp';
+const imgWidthSammy = 725;
+const imgHeightSammy = 928;
+
+import steamedHams from '@/public/images/steamedhams.webp';
+const imgWidthSteamed = 959;
+const imgHeightSteamed = 701;
+
+import cipher from '@/public/images/caesar.webp';
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
@@ -146,9 +157,40 @@ export default function Projects() {
                 <ProjectRecipes id="project-2" className='projectMajorCard' />
                 <ProjectPuckDropper id="project-3" className='projectMajorCard' />
                 <div id="minor-row-1" className={`minor-row ${styles['minor-row']}`}>
-                    <ProjectMinorCard id="minor-1" title='Minor Project' subtitle='This is a smaller project' className='projectMinorCard row1' />
-                    <ProjectMinorCard id="minor-2" title='Minor Project' subtitle='This is a smaller project' className='projectMinorCard row1' />
-                    <ProjectMinorCard id="minor-3" title='Minor Project' subtitle='This is a smaller project' className='projectMinorCard row1' />
+                    <ProjectMinorCard
+                        id="minor-1"
+                        title='SammySeal.com'
+                        subtitle='Thij-pykpjom  oirtj s is a smaller project'
+                        className='projectMinorCard row1'
+                        image={sammySeal}
+                        imgWidth={imgWidthSammy}
+                        imgHeight={imgHeightSammy}
+                        alt='picture of Sammy Seal'
+                        linkType='live'
+                        link='https://www.sammyseal.com'
+                    />
+                    <ProjectMinorCard
+                        id="minor-2"
+                        title='SteamedHamsJS'
+                        subtitle='Thij-pykpjom  oirtj s is a smaller project'
+                        className='projectMinorCard row1'
+                        image={steamedHams}
+                        imgWidth={imgWidthSteamed}
+                        imgHeight={imgHeightSteamed}
+                        alt='picture of Seymour Skinner with hamburgers'
+                        linkType='repo'
+                        link=''
+                    />
+                    <ProjectMinorCard
+                        id="minor-3"
+                        title='Caesar Cipher'
+                        subtitle='Thij-pykpjom  oirtj s is a smaller project'
+                        className='projectMinorCard row1'
+                        image={cipher}
+                        alt='picture of code'
+                        linkType='repo'
+                        link=''
+                    />
                 </div>
             </div>
         </section>

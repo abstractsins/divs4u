@@ -76,7 +76,7 @@
     justify-content: space-between;
     margin: 2vh;
     /* padding: 2vh 1vw; */
-    gap: clamp(10px, 2rem, 4vh);
+    gap: clamp(12px, 2.25rem, 4vh);
 }
 
 @media (max-width: 1500px) {

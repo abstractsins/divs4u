@@ -17,3 +17,77 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.link {
+    /* background-color: var(--background); */
+    border-radius: 20px;
+    display: flex;
+    padding: 1.5vh 1vw;
+    width: 100%;
+    /* justify-content: space-around; */
+    gap: 10px;
+}
+
+.link span {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: clamp(10pt, .65vw, 18pt);
+}
+
+.link a {
+    border: 1px solid rgba(192, 192, 192, 0.5);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.link a:hover {
+    /* border: 1px solid rgba(192, 192, 192, 0.5); */
+    background-color: var(--background);
+    border: 1px solid transparent;
+}
+
+.left-half {
+    position: relative;
+    display: flex;
+    flex: 0 0 clamp(110px, 18vw, 180px);
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+.left-half :global(img) {
+    width: 85%;
+    height: auto;
+    object-fit: cover;
+    /* no distortion */
+    display: block;
+}
+
+.titles {
+    display: flex;
+    margin: 2vh 1vw;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titles h2 {
+    font-size: clamp(14pt, 1.25vw, 32pt);
+}
+
+.titles h3 {
+    font-size: clamp(10pt, .65vw, 18pt);
+}
+
+.right-half {
+    flex: 1 1 auto;
+    min-width: 0;
+    /* allow text to wrap instead of pushing layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

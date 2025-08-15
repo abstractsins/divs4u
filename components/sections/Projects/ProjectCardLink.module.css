@@ -1,0 +1,21 @@
+
+
+.logos {
+    font-size: clamp(12pt, 1vw + 1.5rem, 2rem);
+}
+
+.logos span {
+    display: flex;
+    gap: 1vw;
+}
+
+.logos svg {
+    display: inline-flex;
+    color: var(--color-honey);
+}
+
+span.status {
+    color: var(--color-mustard);
+    font-size: clamp(12pt, .75vw, 26pt);
+    font-style: italic;
+}
