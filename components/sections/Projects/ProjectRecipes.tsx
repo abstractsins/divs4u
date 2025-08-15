@@ -33,10 +33,10 @@ interface Props {
     className: string;
 }
 
-export default function ProjectRecipes({ id }: Props) {
+export default function ProjectRecipes({ id, className}: Props) {
 
     return (
-        <div id={id} className={`${pacifico.variable} ${styles['project-card-wrapper']}`}>
+        <div id={id} className={`${pacifico.variable} ${styles['project-card-wrapper']} ${className}`}>
 
             <div className={styles['left-half']}>
                 <Image

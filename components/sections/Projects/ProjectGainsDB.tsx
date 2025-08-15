@@ -35,10 +35,10 @@ interface Props {
     className: string;
 }
 
-export default function ProjectGainsDB({ id }: Props) {
+export default function ProjectGainsDB({ id, className }: Props) {
 
     return (
-        <div id={id} className={`${gains.variable} ${styles['project-card-wrapper']}`}>
+        <div id={id} className={`${gains.variable} ${styles['project-card-wrapper']} ${className}`}>
 
             <div className={styles['left-half']}>
                 <Image

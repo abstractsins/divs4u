@@ -21,10 +21,10 @@ interface Props {
     className: string;
 }
 
-export default function ProjectPuckDropper({ id }: Props) {
+export default function ProjectPuckDropper({ id, className }: Props) {
 
     return (
-        <div id={id} className={`${puck.variable} ${styles['project-card-wrapper']}`}>
+        <div id={id} className={`${puck.variable} ${styles['project-card-wrapper']} ${className}`}>
 
             <div className={styles['left-half']}>
                 <Image

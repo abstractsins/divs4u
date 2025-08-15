@@ -1,1 +1,19 @@
+.project-card-wrapper {
+    display: flex;
+    background-color: var(--color-dusk);
+    border-radius: 20px;
+    /* width: clamp(33px, 22vw, 500px); */
+    /* height: clamp(100px, 25vh, 500px); */
+    justify-content: space-between;
+    /* margin: 2vh; */
+    /* padding: 2vh 1vw; */
+    width: 100%;
+    transform: translateX(-100vw);
+}
 
+.titles {
+    display: flex;
+    margin: 2vh 1vw;
+    flex-direction: column;
+    justify-content: center;
+}
