@@ -72,7 +72,7 @@
     border-radius: 20px;
     width: clamp(100px, 65vw, 1500px);
     height: clamp(100px, 25vh, 500px);
-    /* transform: translateX(-100vw); */
+    transform: translateX(-100vw);
     justify-content: space-between;
     margin: 2vh;
     /* padding: 2vh 1vw; */

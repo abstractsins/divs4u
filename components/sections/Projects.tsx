@@ -20,6 +20,10 @@ import steamedHams from '@/public/images/steamedhams.webp';
 const imgWidthSteamed = 959;
 const imgHeightSteamed = 701;
 
+import weather from '@/public/images/weather.webp';
+const imgWidthWeather = 5472;
+const imgHeightWeather = 3648;
+
 import cipher from '@/public/images/caesar.webp';
 
 
@@ -84,6 +88,8 @@ export default function Projects() {
 
             gsap.to('#minor-row-1', {
                 autoAlpha: 1,
+                y: 0,
+                x: 0,
                 filter: 'blur(0px)',
                 duration: 1.25,
                 ease: 'power1.out',
@@ -96,14 +102,15 @@ export default function Projects() {
                 },
             });
 
-            gsap.to('#minor-3', {
+            gsap.to('#minor-row-2', {
                 autoAlpha: 1,
                 y: 0,
                 x: 0,
+                filter: 'blur(0px)',
                 duration: 1.25,
                 ease: 'power1.out',
                 scrollTrigger: {
-                    trigger: '#project-3',
+                    trigger: '#minor-row-1',
                     start: 'top 50%',
                     end: '+=600px',
                     toggleActions: 'play none resume reverse',
@@ -111,36 +118,66 @@ export default function Projects() {
                 },
             });
 
-            gsap.to('#minor-2', {
+            gsap.to('#minor-row-3', {
                 autoAlpha: 1,
                 y: 0,
                 x: 0,
+                filter: 'blur(0px)',
                 duration: 1.25,
                 ease: 'power1.out',
                 scrollTrigger: {
-                    trigger: '#minor-3',
-                    // start: 'right center',
-                    // end: '+=600px',
+                    trigger: '#minor-row-2',
+                    start: 'top 50%',
+                    end: '+=600px',
                     toggleActions: 'play none resume reverse',
                     // markers: true,        
                 },
             });
 
-            gsap.to('#minor-1', {
-                autoAlpha: 1,
-                y: 0,
-                x: 0,
-                duration: 1.25,
-                ease: 'power1.out',
-                scrollTrigger: {
-                    trigger: '#minor-2',
-                    start: 'right center',
-                    // end: '+=600px',
-                    toggleActions: 'play none resume reverse',
-                    // markers: true,        
-                },
-            });
+            // gsap.to('#minor-3', {
+            //     autoAlpha: 1,
+            //     y: 0,
+            //     x: 0,
+            //     duration: 1.25,
+            //     ease: 'power1.out',
+            //     scrollTrigger: {
+            //         trigger: '#project-3',
+            //         start: 'top 50%',
+            //         end: '+=600px',
+            //         toggleActions: 'play none resume reverse',
+            //         // markers: true,        
+            //     },
+            // });
 
+            // gsap.to('#minor-2', {
+            //     autoAlpha: 1,
+            //     y: 0,
+            //     x: 0,
+            //     duration: 1.25,
+            //     ease: 'power1.out',
+            //     scrollTrigger: {
+            //         trigger: '#minor-3',
+            //         // start: 'right center',
+            //         // end: '+=600px',
+            //         toggleActions: 'play none resume reverse',
+            //         // markers: true,        
+            //     },
+            // });
+
+            // gsap.to('#minor-1', {
+            //     autoAlpha: 1,
+            //     y: 0,
+            //     x: 0,
+            //     duration: 1.25,
+            //     ease: 'power1.out',
+            //     scrollTrigger: {
+            //         trigger: '#minor-2',
+            //         start: 'right center',
+            //         // end: '+=600px',
+            //         toggleActions: 'play none resume reverse',
+            //         // markers: true,        
+            //     },
+            // });
 
         });
 
@@ -156,6 +193,7 @@ export default function Projects() {
                 <ProjectGainsDB id="project-1" className='projectMajorCard' />
                 <ProjectRecipes id="project-2" className='projectMajorCard' />
                 <ProjectPuckDropper id="project-3" className='projectMajorCard' />
+
                 <div id="minor-row-1" className={`minor-row ${styles['minor-row']}`}>
                     <ProjectMinorCard
                         id="minor-1"
@@ -192,6 +230,85 @@ export default function Projects() {
                         link=''
                     />
                 </div>
+
+                <div id="minor-row-2" className={`minor-row ${styles['minor-row']}`}>
+                    <ProjectMinorCard
+                        id="minor-4"
+                        title='Weather API'
+                        subtitle='Basic weather API fetch for Philadelphia from openweathermap.org'
+                        className='projectMinorCard row2'
+                        image={weather}
+                        imgWidth={imgWidthWeather}
+                        imgHeight={imgHeightWeather}
+                        alt='picture of Sammy Seal'
+                        linkType='repo'
+                        link='https://github.com/abstractsins/weather'
+                    />
+                    <ProjectMinorCard
+                        id="minor-4"
+                        title='Weather API'
+                        subtitle='Basic weather API fetch for Philadelphia from openweathermap.org'
+                        className='projectMinorCard row2'
+                        image={weather}
+                        imgWidth={imgWidthWeather}
+                        imgHeight={imgHeightWeather}
+                        alt='picture of Sammy Seal'
+                        linkType='repo'
+                        link='https://github.com/abstractsins/weather'
+                    />
+                    <ProjectMinorCard
+                        id="minor-4"
+                        title='Weather API'
+                        subtitle='Basic weather API fetch for Philadelphia from openweathermap.org'
+                        className='projectMinorCard row2'
+                        image={weather}
+                        imgWidth={imgWidthWeather}
+                        imgHeight={imgHeightWeather}
+                        alt='picture of Sammy Seal'
+                        linkType='repo'
+                        link='https://github.com/abstractsins/weather'
+                    />
+                </div>
+
+                <div id="minor-row-3" className={`minor-row ${styles['minor-row']}`}>
+                    <ProjectMinorCard
+                        id="minor-4"
+                        title='Weather API'
+                        subtitle='Basic weather API fetch for Philadelphia from openweathermap.org'
+                        className='projectMinorCard row2'
+                        image={weather}
+                        imgWidth={imgWidthWeather}
+                        imgHeight={imgHeightWeather}
+                        alt='picture of Sammy Seal'
+                        linkType='repo'
+                        link='https://github.com/abstractsins/weather'
+                    />
+                    <ProjectMinorCard
+                        id="minor-4"
+                        title='Weather API'
+                        subtitle='Basic weather API fetch for Philadelphia from openweathermap.org'
+                        className='projectMinorCard row2'
+                        image={weather}
+                        imgWidth={imgWidthWeather}
+                        imgHeight={imgHeightWeather}
+                        alt='picture of Sammy Seal'
+                        linkType='repo'
+                        link='https://github.com/abstractsins/weather'
+                    />
+                    <ProjectMinorCard
+                        id="minor-4"
+                        title='Weather API'
+                        subtitle='Basic weather API fetch for Philadelphia from openweathermap.org'
+                        className='projectMinorCard row2'
+                        image={weather}
+                        imgWidth={imgWidthWeather}
+                        imgHeight={imgHeightWeather}
+                        alt='picture of Sammy Seal'
+                        linkType='repo'
+                        link='https://github.com/abstractsins/weather'
+                    />
+                </div>
+
             </div>
         </section>
     );
