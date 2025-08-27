@@ -21,10 +21,10 @@ interface Props {
     className: string;
 }
 
-export default function ProjectPuckDropper({ id }: Props) {
+export default function ProjectPuckDropper({ id, className }: Props) {
 
     return (
-        <div id={id} className={`${puck.variable} ${styles['project-card-wrapper']}`}>
+        <div id={id} className={`${puck.variable} ${styles['project-card-wrapper']} ${className}`}>
 
             <div className={styles['left-half']}>
                 <Image
@@ -48,8 +48,8 @@ export default function ProjectPuckDropper({ id }: Props) {
                 </div>
                 <div className={styles['links']}>
                     <span className={styles['status']}>Growth Project</span>
-                    <span><Link href='https://www.youtube.com/watch?v=R15gpBx2NWo' target='new'><MdOutlineOndemandVideo /> Video Link</Link></span>
-                    <span><Link href='https://github.com/abstractsins/PuckDropper' target='new'><SiGithub /> Repo</Link></span>
+                    <span><Link href='https://www.youtube.com/watch?v=R15gpBx2NWo' target='_new'><MdOutlineOndemandVideo /> Video Link</Link></span>
+                    <span><Link href='https://github.com/abstractsins/PuckDropper' target='_new'><SiGithub /> Repo</Link></span>
                 </div>
             </div>
 

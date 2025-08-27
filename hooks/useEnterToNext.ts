@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useMemo } from 'react';
+import { useEffect } from 'react';
 
 function getHeaderOffset() {
     // account for sticky header height if you set --header-h in CSS
@@ -7,7 +7,7 @@ function getHeaderOffset() {
     return `-${parseFloat(v) || 0}px 0px 0px 0px`;
 }
 
-export function useEnterToNext(sectionId: string, nextId: string, threshold = 0.55) {
+export function useEnterToNext(sectionId: string, nextId: string, threshold = 0.25) {
     useEffect(() => {
         const section = document.getElementById(sectionId);
         if (!section) return;

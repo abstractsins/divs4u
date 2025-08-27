@@ -35,10 +35,10 @@ interface Props {
     className: string;
 }
 
-export default function ProjectGainsDB({ id }: Props) {
+export default function ProjectGainsDB({ id, className }: Props) {
 
     return (
-        <div id={id} className={`${gains.variable} ${styles['project-card-wrapper']}`}>
+        <div id={id} className={`${gains.variable} ${styles['project-card-wrapper']} ${className}`}>
 
             <div className={styles['left-half']}>
                 <Image
@@ -70,8 +70,8 @@ export default function ProjectGainsDB({ id }: Props) {
                 </div>
                 <div className={styles['links']}>
                     <span className={styles['status']}>Live App</span>
-                    <span><Link href='https://www.gainsdb.com' target='new'><GiWeightLiftingUp /> Live Link</Link></span>
-                    <span><Link href='https://github.com/abstractsins/GainsDB' target='new'><SiGithub /> Repo</Link></span>
+                    <span><Link href='https://www.gainsdb.com' target='_new'><GiWeightLiftingUp /> Live Link</Link></span>
+                    <span><Link href='https://github.com/abstractsins/GainsDB' target='_new'><SiGithub /> Repo</Link></span>
                 </div>
             </div>
 

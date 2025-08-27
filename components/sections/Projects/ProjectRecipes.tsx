@@ -33,10 +33,10 @@ interface Props {
     className: string;
 }
 
-export default function ProjectRecipes({ id }: Props) {
+export default function ProjectRecipes({ id, className}: Props) {
 
     return (
-        <div id={id} className={`${pacifico.variable} ${styles['project-card-wrapper']}`}>
+        <div id={id} className={`${pacifico.variable} ${styles['project-card-wrapper']} ${className}`}>
 
             <div className={styles['left-half']}>
                 <Image
@@ -58,8 +58,9 @@ export default function ProjectRecipes({ id }: Props) {
                             <RiNextjsFill title='Next.js' />
                             <BiLogoTypescript title='TypeScript' />
                             <RiVercelFill title='Vercel' />
-                            <SiPrisma title='Prisma' />
+                            <BiLogoPostgresql title='PostgreSQL' />
                             <SiRailway title='Railway' />
+                            <SiPrisma title='Prisma' />
                         </span>
                     </div>
 
@@ -67,8 +68,8 @@ export default function ProjectRecipes({ id }: Props) {
 
                 <div className={styles['links']}>
                     <span className={styles['status']}>Current Project</span>
-                    <span><Link href='https://recipes-56gtc1c5z-divs4us-projects.vercel.app/login' target='new'><PiChefHatLight /> Preview Build</Link></span>
-                    <span><Link href='https://github.com/abstractsins/recipes' target='new'><SiGithub /> Repo</Link></span>
+                    <span><Link href='https://recipes-git-dev-divs4us-projects.vercel.app?_vercel_share=ABCvnsIALF9DiyqTKalFU8C1lck7QCO9/login' target='_new'><PiChefHatLight /> Preview Build</Link></span>
+                    <span><Link href='https://github.com/abstractsins/recipes' target='_new'><SiGithub /> Repo</Link></span>
                 </div>
             </div>
 

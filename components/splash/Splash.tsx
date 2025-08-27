@@ -24,7 +24,7 @@ export default function Splash() {
     setTimeout(() => {
       setPower(prev => {
         const next = !prev;
-        if (next) setHasBooted(true); // first time we ever turned on
+        if (next) setHasBooted(true); 
         return next;
       });
     }, 500);
@@ -39,8 +39,8 @@ export default function Splash() {
       e.preventDefault();
       const el = document.getElementById('about');
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' }); // scroll
-        history.pushState(null, '', '#about');                      // update URL
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+        history.pushState(null, '', '#about');                     
       }
     }
   }, []);
