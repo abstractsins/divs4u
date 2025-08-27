@@ -16,11 +16,17 @@
     }
 }
 
+
 .left-half {
     display: flex;
     width: 70%;
     gap: 1vw;
 }
+
+.left-half.minor {
+    width: 45%;
+}
+
 
 .left-half img {
     border-radius: 20px;

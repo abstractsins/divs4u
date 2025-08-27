@@ -10,11 +10,10 @@ import ProjectPuckDropper from './Projects/ProjectPuckDropper';
 
 import { useEnterToNext } from '@/hooks/useEnterToNext';
 import ProjectRecipes from './Projects/ProjectRecipes';
-import ProjectMinorCard from './Projects/ProjectMinorCard';
 
-import sammySeal from '@/public/images/sammy1.webp';
-const imgWidthSammy = 725;
-const imgHeightSammy = 928;
+import sammySeal from '@/public/images/sammysealpage.webp';
+const imgWidthSammy = 1529;
+const imgHeightSammy = 877;
 
 import steamedHams from '@/public/images/steamedhams.webp';
 const imgWidthSteamed = 959;
@@ -24,7 +23,7 @@ import weather from '@/public/images/weather.webp';
 const imgWidthWeather = 5472;
 const imgHeightWeather = 3648;
 
-import cipher from '@/public/images/caesar.webp';
+import ProjectMajorCard from './Projects/ProjectMajorCard';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -52,7 +51,7 @@ export default function Projects() {
                     toggleActions: 'play none resume reverse',
                     // markers: true,        
                 },
-            });
+            })
 
             gsap.to('#project-2', {
                 autoAlpha: 1,
@@ -86,7 +85,7 @@ export default function Projects() {
                 },
             });
 
-            gsap.to('#minor-row-1', {
+            gsap.to('#project-4', {
                 autoAlpha: 1,
                 y: 0,
                 x: 0,
@@ -102,7 +101,7 @@ export default function Projects() {
                 },
             });
 
-            gsap.to('#minor-row-2', {
+            gsap.to('#project-5', {
                 autoAlpha: 1,
                 y: 0,
                 x: 0,
@@ -110,7 +109,7 @@ export default function Projects() {
                 duration: 1.25,
                 ease: 'power1.out',
                 scrollTrigger: {
-                    trigger: '#minor-row-1',
+                    trigger: '#project-4',
                     start: 'top 50%',
                     end: '+=600px',
                     toggleActions: 'play none resume reverse',
@@ -118,7 +117,7 @@ export default function Projects() {
                 },
             });
 
-            gsap.to('#minor-row-3', {
+            gsap.to('#project-6', {
                 autoAlpha: 1,
                 y: 0,
                 x: 0,
@@ -126,58 +125,13 @@ export default function Projects() {
                 duration: 1.25,
                 ease: 'power1.out',
                 scrollTrigger: {
-                    trigger: '#minor-row-2',
+                    trigger: '#project-5',
                     start: 'top 50%',
                     end: '+=600px',
                     toggleActions: 'play none resume reverse',
                     // markers: true,        
                 },
             });
-
-            // gsap.to('#minor-3', {
-            //     autoAlpha: 1,
-            //     y: 0,
-            //     x: 0,
-            //     duration: 1.25,
-            //     ease: 'power1.out',
-            //     scrollTrigger: {
-            //         trigger: '#project-3',
-            //         start: 'top 50%',
-            //         end: '+=600px',
-            //         toggleActions: 'play none resume reverse',
-            //         // markers: true,        
-            //     },
-            // });
-
-            // gsap.to('#minor-2', {
-            //     autoAlpha: 1,
-            //     y: 0,
-            //     x: 0,
-            //     duration: 1.25,
-            //     ease: 'power1.out',
-            //     scrollTrigger: {
-            //         trigger: '#minor-3',
-            //         // start: 'right center',
-            //         // end: '+=600px',
-            //         toggleActions: 'play none resume reverse',
-            //         // markers: true,        
-            //     },
-            // });
-
-            // gsap.to('#minor-1', {
-            //     autoAlpha: 1,
-            //     y: 0,
-            //     x: 0,
-            //     duration: 1.25,
-            //     ease: 'power1.out',
-            //     scrollTrigger: {
-            //         trigger: '#minor-2',
-            //         start: 'right center',
-            //         // end: '+=600px',
-            //         toggleActions: 'play none resume reverse',
-            //         // markers: true,        
-            //     },
-            // });
 
         });
 
@@ -187,127 +141,79 @@ export default function Projects() {
     }, []);
 
     return (
-        <section id="projects" className={styles["projects-container"]}>
+        <section id='projects' className={styles['projects-container']}>
             <h2 className={` ${styles['section-title']}`}>Projects</h2>
             <div className={styles['projects-body']}>
-                <ProjectGainsDB id="project-1" className='projectMajorCard' />
-                <ProjectRecipes id="project-2" className='projectMajorCard' />
-                <ProjectPuckDropper id="project-3" className='projectMajorCard' />
+                
+                <ProjectGainsDB id='project-1' className='projectMajorCard' />
+                <ProjectRecipes id='project-2' className='projectMajorCard' />
+                <ProjectPuckDropper id='project-3' className='projectMajorCard' />
 
-                <div id="minor-row-1" className={`minor-row ${styles['minor-row']}`}>
-                    <ProjectMinorCard
-                        id="minor-1"
-                        title='SammySeal.com'
-                        subtitle='Thij-pykpjom  oirtj s is a smaller project'
-                        className='projectMinorCard row1'
-                        image={sammySeal}
-                        imgWidth={imgWidthSammy}
-                        imgHeight={imgHeightSammy}
-                        alt='picture of Sammy Seal'
-                        linkType='live'
-                        link='https://www.sammyseal.com'
-                    />
-                    <ProjectMinorCard
-                        id="minor-2"
-                        title='SteamedHamsJS'
-                        subtitle='Thij-pykpjom  oirtj s is a smaller project'
-                        className='projectMinorCard row1'
-                        image={steamedHams}
-                        imgWidth={imgWidthSteamed}
-                        imgHeight={imgHeightSteamed}
-                        alt='picture of Seymour Skinner with hamburgers'
-                        linkType='repo'
-                        link=''
-                    />
-                    <ProjectMinorCard
-                        id="minor-3"
-                        title='Caesar Cipher'
-                        subtitle='Thij-pykpjom  oirtj s is a smaller project'
-                        className='projectMinorCard row1'
-                        image={cipher}
-                        alt='picture of code'
-                        linkType='repo'
-                        link=''
-                    />
-                </div>
+                {/*  STEAMED HAMS */}
+                <ProjectMajorCard
+                    title='steamedHamsJS'
+                    subtitle='Adaptation of the Simpsons skit'
 
-                <div id="minor-row-2" className={`minor-row ${styles['minor-row']}`}>
-                    <ProjectMinorCard
-                        id="minor-4"
-                        title='Weather API'
-                        subtitle='Basic weather API fetch for Philadelphia from openweathermap.org'
-                        className='projectMinorCard row2'
-                        image={weather}
-                        imgWidth={imgWidthWeather}
-                        imgHeight={imgHeightWeather}
-                        alt='picture of Sammy Seal'
-                        linkType='repo'
-                        link='https://github.com/abstractsins/weather'
-                    />
-                    <ProjectMinorCard
-                        id="minor-4"
-                        title='Weather API'
-                        subtitle='Basic weather API fetch for Philadelphia from openweathermap.org'
-                        className='projectMinorCard row2'
-                        image={weather}
-                        imgWidth={imgWidthWeather}
-                        imgHeight={imgHeightWeather}
-                        alt='picture of Sammy Seal'
-                        linkType='repo'
-                        link='https://github.com/abstractsins/weather'
-                    />
-                    <ProjectMinorCard
-                        id="minor-4"
-                        title='Weather API'
-                        subtitle='Basic weather API fetch for Philadelphia from openweathermap.org'
-                        className='projectMinorCard row2'
-                        image={weather}
-                        imgWidth={imgWidthWeather}
-                        imgHeight={imgHeightWeather}
-                        alt='picture of Sammy Seal'
-                        linkType='repo'
-                        link='https://github.com/abstractsins/weather'
-                    />
-                </div>
+                    id='project-4'
+                    className='projectMajorCard'
 
-                <div id="minor-row-3" className={`minor-row ${styles['minor-row']}`}>
-                    <ProjectMinorCard
-                        id="minor-4"
-                        title='Weather API'
-                        subtitle='Basic weather API fetch for Philadelphia from openweathermap.org'
-                        className='projectMinorCard row2'
-                        image={weather}
-                        imgWidth={imgWidthWeather}
-                        imgHeight={imgHeightWeather}
-                        alt='picture of Sammy Seal'
-                        linkType='repo'
-                        link='https://github.com/abstractsins/weather'
-                    />
-                    <ProjectMinorCard
-                        id="minor-4"
-                        title='Weather API'
-                        subtitle='Basic weather API fetch for Philadelphia from openweathermap.org'
-                        className='projectMinorCard row2'
-                        image={weather}
-                        imgWidth={imgWidthWeather}
-                        imgHeight={imgHeightWeather}
-                        alt='picture of Sammy Seal'
-                        linkType='repo'
-                        link='https://github.com/abstractsins/weather'
-                    />
-                    <ProjectMinorCard
-                        id="minor-4"
-                        title='Weather API'
-                        subtitle='Basic weather API fetch for Philadelphia from openweathermap.org'
-                        className='projectMinorCard row2'
-                        image={weather}
-                        imgWidth={imgWidthWeather}
-                        imgHeight={imgHeightWeather}
-                        alt='picture of Sammy Seal'
-                        linkType='repo'
-                        link='https://github.com/abstractsins/weather'
-                    />
-                </div>
+                    thumbnailSrc={steamedHams}
+                    alt='picture of Seymour Skinner with hamburgers'
+                    thumbnailH={imgHeightSteamed}
+                    thumbnailW={imgWidthSteamed}
+
+                    tech={'javascript node'.split(' ')}
+                    status='For Fun'
+
+                    link1='https://github.com/abstractsins/steamedHams'
+                    linkType1='repo'
+                />
+
+                {/* WEATHER */}
+                <ProjectMajorCard
+                    title='WhatsTheDamnWeather.com'
+                    subtitle='Emotional AI Next.js Weather App'
+
+                    id='project-5'
+                    className='projectMajorCard'
+
+                    thumbnailSrc={weather}
+                    alt='picture of clouds'
+                    thumbnailH={imgHeightWeather}
+                    thumbnailW={imgWidthWeather}
+
+                    tech={'typescript next vercel'.split(' ')}
+                    status='Live Site'
+
+                    link1='https://www.whatsthedamnweather.com'
+                    linkType1='live'
+
+                    link2='https://github.com/abstractsins/nextWeather'
+                    linkType2='repo'
+                />
+
+                {/* SAMMY SEAL */}
+                <ProjectMajorCard
+                    title='Sammy Seal'
+                    subtitle='Dad joke randomizer'
+
+                    id='project-6'
+                    className='projectMajorCard'
+
+                    thumbnailSrc={sammySeal}
+                    alt='picture of Sammy Seal puppet'
+                    thumbnailH={imgHeightSammy}
+                    thumbnailW={imgWidthSammy}
+
+                    tech={'javascript typescript next node vercel'.split(' ')}
+                    status='Live Site'
+
+                    link1='https://www.sammyseal.com'
+                    linkType1='live'
+
+                    link2='https://github.com/abstractsins/originalsamseal.github.io'
+                    linkType2='repo'
+                />
 
             </div>
         </section>

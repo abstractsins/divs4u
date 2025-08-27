@@ -58,8 +58,9 @@ export default function ProjectRecipes({ id, className}: Props) {
                             <RiNextjsFill title='Next.js' />
                             <BiLogoTypescript title='TypeScript' />
                             <RiVercelFill title='Vercel' />
-                            <SiPrisma title='Prisma' />
+                            <BiLogoPostgresql title='PostgreSQL' />
                             <SiRailway title='Railway' />
+                            <SiPrisma title='Prisma' />
                         </span>
                     </div>
 
