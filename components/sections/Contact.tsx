@@ -1,5 +1,6 @@
 import ContactForm from '@/components/sections/Contact/ContactForm';
 import styles from '@/components/MainContent.module.css';
+import Connect from './Contact/Connect';
 
 export default function Contact() {
 
@@ -8,6 +9,7 @@ export default function Contact() {
             <h2 className={` ${styles['section-title']}`}>Contact</h2>
             <div className={styles['contact-body']}>
                 <ContactForm />
+                <Connect />
             </div>
         </section>
     );

@@ -1,0 +1,32 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 200px;
+    gap: 15px;
+    border-radius: 20px;
+    border: 1px solid var(--color-mustard);
+    padding: 2vh 1vw;
+}
+
+.title {
+    font-size: clamp(14pt, 1vw + 1rem, 22pt);
+}
+
+.logo {
+    width: clamp(25px, 3vw, 60px);
+    margin: 5px;
+}
+
+@media (max-width: 1100) {
+    .wrapper {
+        right: 75px;
+    }
+}
+
+@media (max-width: 800) {
+    .wrapper {
+        right: 5px;
+    }
+}
