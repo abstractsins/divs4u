@@ -28,7 +28,7 @@ const gains = Tourney({
     weight: ['400'],
     subsets: ['latin'],
     display: 'swap'
-})
+});
 
 interface Props {
     id: string;
