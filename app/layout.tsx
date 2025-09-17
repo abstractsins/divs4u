@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 
 //* STATS
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
 
 //* STYLES
 import "./globals.css";
@@ -76,6 +77,7 @@ export default function RootLayout({
       <body id="hero" className={`${montserrat.variable} ${sixtyfour.variable} ${arbutus.variable} ${geistSans.variable} ${geistMono.variable} antialiased`} >
         {children}
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
