@@ -5,6 +5,9 @@
 //* REACT and NEXT
 import type { Metadata } from "next";
 
+//* STATS
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 //* STYLES
 import "./globals.css";
 
@@ -72,6 +75,7 @@ export default function RootLayout({
     <html lang="en">
       <body id="hero" className={`${montserrat.variable} ${sixtyfour.variable} ${arbutus.variable} ${geistSans.variable} ${geistMono.variable} antialiased`} >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
