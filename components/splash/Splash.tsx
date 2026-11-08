@@ -30,6 +30,14 @@ export default function Splash() {
     }, 500);
   };
 
+  const continueToAbout = useCallback(() => {
+    const el = document.getElementById('about');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.pushState(null, '', '#about');
+    }
+  }, []);
+
   const onKey = useCallback((e: KeyboardEvent) => {
     // ignore when typing
     const t = e.target as HTMLElement | null;
@@ -37,13 +45,9 @@ export default function Splash() {
 
     if (e.key === 'Enter') {
       e.preventDefault();
-      const el = document.getElementById('about');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
-        history.pushState(null, '', '#about');                     
-      }
+      continueToAbout();
     }
-  }, []);
+  }, [continueToAbout]);
 
   useEffect(() => {
     window.addEventListener('keydown', onKey);
@@ -85,14 +89,14 @@ export default function Splash() {
           <>
             <SplashSubTitles isPowerOn={isPowerOn} name={NAME} />
             <div className='flex w-[100%]' ref={ref}>
-              <InstructionTitle />
+              <InstructionTitle onActivate={continueToAbout} />
             </div>
           </>
         )}
-      </div>
 
-      {/* Fixed overlay that fades out smoothly */}
-      <div className={`${styles['scanlines']} ${isPowerOn && styles['active']}`} aria-hidden="true" />
+        {/* Scanline overlay is scoped to splash only to avoid tinting sticky UI outside hero */}
+        <div className={`${styles['scanlines']} ${isPowerOn && styles['active']}`} aria-hidden="true" />
+      </div>
     </>
   );
 }

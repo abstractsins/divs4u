@@ -10,14 +10,15 @@
   width: 100%;
   height: 100vh;
   padding: 2vmin 3vmin;
+  overflow: hidden;
 }
 
 /* scan moves from -100% (above) -> 100% (below), then resets off-screen */
 .scanlines.active {
-  position: fixed;
+  position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 50;
+  z-index: 10;
   mix-blend-mode: screen;
 
   /* knobs */

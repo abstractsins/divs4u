@@ -1,196 +1,302 @@
 .sub-container {
-    margin: 1vh 5vw;
+  margin: 1vh 5vw;
 }
 
 /* each subtitle line “boots” as a unit */
 .sub {
-    /* width: 100%; */
-    margin-top: clamp(2rem, 4.4vh, 4.4rem);
-    font-size: clamp(1.1rem, 3.2vw, 2.2rem);
-    letter-spacing: 0.06em;
+  /* width: 100%; */
+  margin-top: clamp(2rem, 4.4vh, 4.4rem);
+  font-size: clamp(1.1rem, 3.2vw, 2.2rem);
+  letter-spacing: 0.06em;
 
-    opacity: .06;
-    /* off state */
-    filter: brightness(.8) blur(.6px);
-    transform: translateY(6px);
-    color: #e7e7e700;
+  opacity: 0.06;
+  /* off state */
+  filter: brightness(0.8) blur(0.6px);
+  transform: translateY(6px);
+  color: #e7e7e700;
 
-
-    animation:
-        lineBoot 1.2s ease-out var(--ld, 0ms) forwards,
-        lineIdle 4s steps(1, end) calc(var(--ld, 0ms) + 1400ms) infinite;
+  animation:
+    lineBoot 1.2s ease-out var(--ld, 0ms) forwards,
+    lineIdle 4s steps(1, end) calc(var(--ld, 0ms) + 1400ms) infinite;
 }
 
 @keyframes lineBoot {
-    0% {
-        opacity: .06;
-        filter: brightness(.8) blur(.6px);
-        transform: translateY(6px);
-        text-shadow: none;
-    }
+  0% {
+    opacity: 0.06;
+    filter: brightness(0.8) blur(0.6px);
+    transform: translateY(6px);
+    text-shadow: none;
+  }
 
-    35% {
-        opacity: .7;
-        filter: brightness(1.05) blur(.3px);
-    }
+  35% {
+    opacity: 0.7;
+    filter: brightness(1.05) blur(0.3px);
+  }
 
-    50% {
-        opacity: .35;
-        filter: brightness(.95) blur(.2px);
-    }
+  50% {
+    opacity: 0.35;
+    filter: brightness(0.95) blur(0.2px);
+  }
 
-    75% {
-        opacity: .9;
-        filter: brightness(1.08) blur(.15px);
-    }
+  75% {
+    opacity: 0.9;
+    filter: brightness(1.08) blur(0.15px);
+  }
 
-    100% {
-        opacity: 1;
-        filter: none;
-        transform: translateY(0);
-        color: #e7e7e7;
-        text-shadow:
-            0 0 .06rem rgba(255, 255, 255, .55),
-            0 0 .20rem rgba(255, 255, 255, .15);
-    }
+  100% {
+    opacity: 1;
+    filter: none;
+    transform: translateY(0);
+    color: #e7e7e7;
+    text-shadow:
+      0 0 0.06rem rgba(255, 255, 255, 0.55),
+      0 0 0.2rem rgba(255, 255, 255, 0.15);
+  }
 }
 
 /* subtle idle blip so it feels alive */
 @keyframes lineIdle {
+  0%,
+  97%,
+  100% {
+    text-shadow:
+      0 0 0.05rem rgba(255, 255, 255, 0.45),
+      0 0 0.16rem rgba(255, 255, 255, 0.12);
+    opacity: 0.98;
+  }
 
-    0%,
-    97%,
-    100% {
-        text-shadow:
-            0 0 .05rem rgba(255, 255, 255, .45),
-            0 0 .16rem rgba(255, 255, 255, .12);
-        opacity: .98;
-    }
-
-    98% {
-        text-shadow: none;
-        opacity: .92;
-    }
+  98% {
+    text-shadow: none;
+    opacity: 0.92;
+  }
 }
 
 .subOff {
-    animation: lineShutdown 900ms steps(20, end) forwards !important;
+  animation: lineShutdown 900ms steps(20, end) forwards !important;
 }
 
 @keyframes lineShutdown {
-    0% {
-        opacity: 1;
-        color: #e7e7e7;
-        filter: none;
-        text-shadow: 0 0 .06rem rgba(255, 255, 255, .55), 0 0 .20rem rgba(255, 255, 255, .15);
-    }
+  0% {
+    opacity: 1;
+    color: #e7e7e7;
+    filter: none;
+    text-shadow:
+      0 0 0.06rem rgba(255, 255, 255, 0.55),
+      0 0 0.2rem rgba(255, 255, 255, 0.15);
+  }
 
-    15% {
-        opacity: .5;
-        text-shadow: none;
-    }
+  15% {
+    opacity: 0.5;
+    text-shadow: none;
+  }
 
-    30% {
-        opacity: .95;
-        text-shadow: 0 0 .05rem rgba(255, 255, 255, .45), 0 0 .16rem rgba(255, 255, 255, .12);
-    }
+  30% {
+    opacity: 0.95;
+    text-shadow:
+      0 0 0.05rem rgba(255, 255, 255, 0.45),
+      0 0 0.16rem rgba(255, 255, 255, 0.12);
+  }
 
-    55% {
-        opacity: .4;
-        filter: blur(.15px);
-    }
+  55% {
+    opacity: 0.4;
+    filter: blur(0.15px);
+  }
 
-    80% {
-        opacity: .18;
-        color: #9bbd9b;
-        filter: blur(.28px);
-        text-shadow: 0 0 .08rem rgba(200, 255, 200, .18);
-    }
+  80% {
+    opacity: 0.18;
+    color: #9bbd9b;
+    filter: blur(0.28px);
+    text-shadow: 0 0 0.08rem rgba(200, 255, 200, 0.18);
+  }
 
-    100% {
-        opacity: 0;
-        color: #1a1a1a;
-        filter: blur(.36px);
-        text-shadow: none;
-    }
+  100% {
+    opacity: 0;
+    color: #1a1a1a;
+    filter: blur(0.36px);
+    text-shadow: none;
+  }
 }
 
 @media screen and (max-width: 1800px) {
-    .sub {
-        font-size: 2rem;
-    }
+  .sub {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (max-width: 1200px) {
-    .sub {
-        font-size: 1.25rem;
-    }
+  .sub {
+    font-size: 1.25rem;
+  }
 }
 
 .command {
-    font-size: clamp(14pt, 1vw, 36pt);
-    animation:
-        commandBoot 1.2s ease-out var(--ld, 0ms) forwards,
-        commandIdle 3s steps(1, end) calc(var(--ld, 0ms) + 1400ms) infinite;
+  font-size: clamp(14pt, 1vw, 36pt);
+  animation:
+    commandBoot 1.2s ease-out var(--ld, 0ms) forwards,
+    commandIdle 3s steps(1, end) calc(var(--ld, 0ms) + 1400ms) infinite;
 }
 
 .instruction-wrapper {
-    margin-top: 5vh;
-    display: flex;
-    width: 100%;
-    justify-content: center;
+  margin-top: 5vh;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  user-select: none;
 }
 
+.commandDesktop {
+  display: inline-block;
+}
+
+.commandMobile {
+  display: none;
+}
+
+.commandTrigger {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  line-height: inherit;
+  color: inherit;
+}
 
 @keyframes commandBoot {
-    0% {
-        opacity: .06;
-        filter: brightness(.8) blur(.6px);
-        transform: translateY(6px);
-        text-shadow: none;
-    }
+  0% {
+    opacity: 0.06;
+    filter: brightness(0.8) blur(0.6px);
+    transform: translateY(6px);
+    text-shadow: none;
+  }
 
-    35% {
-        opacity: .7;
-        filter: brightness(1.05) blur(.3px);
-    }
+  35% {
+    opacity: 0.7;
+    filter: brightness(1.05) blur(0.3px);
+  }
 
-    50% {
-        opacity: .35;
-        filter: brightness(.95) blur(.2px);
-    }
+  50% {
+    opacity: 0.35;
+    filter: brightness(0.95) blur(0.2px);
+  }
 
-    75% {
-        opacity: .9;
-        filter: brightness(1.08) blur(.15px);
-    }
+  75% {
+    opacity: 0.9;
+    filter: brightness(1.08) blur(0.15px);
+  }
 
-    100% {
-        opacity: 1;
-        filter: none;
-        transform: translateY(0);
-        color: #e7e7e7;
-        text-shadow:
-            0 0 .13rem #7CFF7C,
-            0 0 .34rem #43ff43,
-            0 0 .75rem #1aff1a;
-    }
+  100% {
+    opacity: 1;
+    filter: none;
+    transform: translateY(0);
+    color: #e7e7e7;
+    text-shadow:
+      0 0 0.13rem #7cff7c,
+      0 0 0.34rem #43ff43,
+      0 0 0.75rem #1aff1a;
+  }
 }
 
 @keyframes commandIdle {
+  0%,
+  97%,
+  100% {
+    text-shadow:
+      0 0 0.13rem #7cff7c,
+      0 0 0.34rem #43ff43,
+      0 0 0.75rem #1aff1a;
+    opacity: 1;
+  }
 
-    0%,
-    97%,
-    100% {
-        text-shadow:
-            0 0 .13rem #7CFF7C,
-            0 0 .34rem #43ff43,
-            0 0 .75rem #1aff1a;
-        opacity: 1;
-    }
+  98% {
+    text-shadow: none;
+    opacity: 0.93;
+  }
+}
 
-    98% {
-        text-shadow: none;
-        opacity: .93;
-    }
+@media (max-width: 768px) {
+  .commandDesktop {
+    display: none;
+  }
+
+  .commandMobile {
+    display: inline-block;
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 1;
+    animation:
+      arrowBoot 1.2s ease-out var(--ld, 0ms) forwards,
+      arrowIdle 3s steps(1, end) calc(var(--ld, 0ms) + 1400ms) infinite,
+      arrowVibe 2s ease-in-out calc(var(--ld, 0ms) + 1400ms) infinite;
+  }
+}
+
+@keyframes arrowBoot {
+  0% {
+    opacity: 0.06;
+    filter: brightness(0.8) blur(0.6px);
+    transform: translateY(6px);
+    text-shadow: none;
+    color: #7cff7c;
+  }
+
+  35% {
+    opacity: 0.7;
+    filter: brightness(1) blur(0.3px);
+  }
+
+  50% {
+    opacity: 0.35;
+    filter: brightness(0.92) blur(0.2px);
+  }
+
+  75% {
+    opacity: 0.9;
+    filter: brightness(1.04) blur(0.15px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: none;
+    transform: translateY(0);
+    color: #74f474;
+    text-shadow:
+      0 0 0.09rem #74f474,
+      0 0 0.22rem #3be63b,
+      0 0 0.45rem #18e218;
+  }
+}
+
+@keyframes arrowIdle {
+  0%,
+  97%,
+  100% {
+    text-shadow:
+      0 0 0.09rem #74f474,
+      0 0 0.22rem #3be63b,
+      0 0 0.45rem #18e218;
+    opacity: 0.96;
+  }
+
+  98% {
+    text-shadow: none;
+    opacity: 0.9;
+  }
+}
+
+@keyframes arrowVibe {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(5px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(15px);
+  }
 }

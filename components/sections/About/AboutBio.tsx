@@ -29,7 +29,7 @@ export default function AboutBio() {
       </p>
       <p className={styles["main-p"]}>
         I turn fuzzy ideas into shipped features: design the schema, build the
-        API, wire the UI, and deploy without drama. My day-to-day is
+        API, wire the UI, and ship with confidence. My day-to-day is
         <strong> Next.js (App Router)</strong>, <strong>Node</strong>, and
         <strong> Postgres/Prisma</strong>, with charts in{" "}
         <strong>Recharts </strong>

@@ -70,7 +70,7 @@ body {
 }
 
 header {
-  background-color: var(--color-plum-semi);
+  background-color: var(--color-plum);
   position: sticky;
   padding: 15px;
   display: flex;
@@ -81,7 +81,8 @@ header {
   height: var(--header-h);
   top: 0;
   z-index: 2;
-  backdrop-filter: blur(15px) saturate(150%);
+  backdrop-filter: none;
+  isolation: isolate;
 }
 
 a {

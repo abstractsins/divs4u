@@ -2,7 +2,11 @@ import styles from './SplashSubTitles.module.css';
 
 import { useEffect, useState } from "react";
 
-export default function InstructionTitle() {
+interface Props {
+    onActivate: () => void;
+}
+
+export default function InstructionTitle({ onActivate }: Props) {
 
     const [isReady, setReady] = useState(false);
 
@@ -10,9 +14,21 @@ export default function InstructionTitle() {
 
     return (
         <div className={styles['instruction-wrapper']}>
-            {isReady &&
-                <span className={`font-title ${styles['sub']} ${styles['command']}`}>Press ENTER to Continue</span>
-            }
+            {isReady && (
+                <>
+                    <span className={`font-title ${styles['sub']} ${styles['command']} ${styles['commandDesktop']}`}>
+                        Press ENTER to Continue
+                    </span>
+                    <button
+                        type="button"
+                        className={`font-title ${styles['sub']} ${styles['command']} ${styles['commandMobile']} ${styles['commandTrigger']}`}
+                        aria-label="Scroll down"
+                        onClick={onActivate}
+                    >
+                        ↓
+                    </button>
+                </>
+            )}
         </div>
     );
 }
