@@ -130,6 +130,10 @@
 }
 
 @media (max-width: 768px) {
+  .sub-container {
+    margin-top: 2rem;
+  }
+
   .sub {
     margin-top: clamp(1.2rem, 2.4vh, 1.8rem);
     font-size: 1.05rem;

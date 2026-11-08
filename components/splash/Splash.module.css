@@ -64,6 +64,7 @@
 
 @media (max-width: 768px) {
   .toggle-name {
-    min-height: 140px;
+    min-height: 160px;
+    justify-content: space-between;
   }
 }

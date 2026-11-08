@@ -272,7 +272,7 @@
 
 @media (max-width: 768px) {
   .boot-wrap {
-    margin: 0;
+    margin: 1rem;
   }
 
   .boot-line {
