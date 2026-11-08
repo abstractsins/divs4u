@@ -24,12 +24,13 @@
   /* knobs */
   --scan-speed: 10s;
   /* slower/faster pass */
-  opacity: var(--scanlines-alpha, .25);
+  opacity: var(--scanlines-alpha, 0.25);
 
-  background:
-    repeating-linear-gradient(to bottom,
-      rgba(0, 255, 21, 0.25) 0 1px,
-      transparent 1px 6px);
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 21, 0.25) 0 1px,
+    transparent 1px 6px
+  );
 
   transform: translateY(-100%);
   /* start fully above the viewport */
@@ -49,4 +50,14 @@
   }
 
   /* off-screen bottom */
+}
+
+@media (max-width: 768px) {
+  .toggle-name {
+    min-height: 140px;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 }

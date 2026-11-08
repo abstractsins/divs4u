@@ -240,3 +240,19 @@
     font-size: 32pt;
   }
 }
+
+@media (max-width: 768px) {
+  .boot-wrap {
+    margin: 0;
+  }
+
+  .boot-letter {
+    font-size: clamp(1.1rem, 6.6vw, 1.8rem);
+    letter-spacing: 0.04em;
+  }
+
+  .boot-cursor {
+    font-size: clamp(1.1rem, 6.6vw, 1.8rem);
+    margin-left: 0.08ch;
+  }
+}
