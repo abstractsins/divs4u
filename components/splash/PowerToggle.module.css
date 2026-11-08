@@ -5,8 +5,8 @@
 
 .switch {
   background-color: black;
-  width: 115px;
-  height: 155px;
+  width: 92px;
+  height: 124px;
   box-shadow:
     0 0 10px 2px rgba(0, 0, 0, 0.2),
     0 0 1px 2px black,
@@ -14,7 +14,7 @@
     inset 0 0 2px 15px #47434c,
     inset 0 0 2px 22px black;
   border-radius: 5px;
-  padding: 20px;
+  padding: 16px;
   perspective: 700px;
   rotate: 90deg;
 }
@@ -72,7 +72,7 @@
     #b10000;
   background-repeat: no-repeat;
   width: 100%;
-  height: 38px;
+  height: 30.4px;
   transform-origin: top;
   transform: rotateX(-90deg);
   position: absolute;
@@ -83,14 +83,14 @@
   content: "";
   background-image: linear-gradient(#650000, #320000);
   width: 100%;
-  height: 50px;
+  height: 40px;
   transform-origin: top;
-  transform: translateY(50px) rotateX(-90deg);
+  transform: translateY(40px) rotateX(-90deg);
   position: absolute;
   bottom: 0;
   box-shadow:
-    0 50px 8px 0px black,
-    0 80px 20px 0px rgba(0, 0, 0, 0.5);
+    0 40px 6.4px 0px black,
+    0 64px 16px 0px rgba(0, 0, 0, 0.5);
 }
 
 .switch .light {
@@ -176,6 +176,26 @@
 
   80% {
     opacity: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .switch {
+    width: 78px;
+    height: 105px;
+    padding: 14px;
+  }
+
+  .switch .button::before {
+    height: 25.8px;
+  }
+
+  .switch .button::after {
+    height: 34px;
+    transform: translateY(34px) rotateX(-90deg);
+    box-shadow:
+      0 34px 5.4px 0 black,
+      0 54.4px 13.6px 0 rgba(0, 0, 0, 0.5);
   }
 }
 
