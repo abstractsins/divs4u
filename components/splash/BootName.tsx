@@ -3,14 +3,17 @@
 
 import styles from "./BootName.module.css";
 
+import { animationControls } from "@/constants";
+
 const NAME = "> Daniel Berlin";
 const MOBILE_LINE_ONE = ">\u00A0Daniel";
 const MOBILE_LINE_TWO = "Berlin";
 
 export default function BootName({ isPowerOn }: { isPowerOn: boolean }) {
-  const LETTER_DELAY = 180; // must match your per-letter stagger
-  const BOOT_PHASE_MS = 3600; // ~1.6 + .9 + 1.1 from keyframes
-  const totalMs = (NAME.length - 1) * LETTER_DELAY + BOOT_PHASE_MS + 200; // small padding
+  const {
+    title: { LETTER_DELAY, BOOT_PHASE_MS, FUDGE_VAR },
+  } = animationControls.hero;
+  const totalMs = (NAME.length - 1) * LETTER_DELAY + BOOT_PHASE_MS + FUDGE_VAR;
 
   const renderChars = (text: string, startIndex = 0) =>
     text.split("").map((ch, i) => (

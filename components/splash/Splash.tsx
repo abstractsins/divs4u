@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useCallback } from 'react';
-import BootName from './BootName';
-import SplashSubTitles from './SplashSubTitles';
-import PowerToggle from './PowerToggle';
-import styles from './Splash.module.css';
-import InstructionTitle from './InstructionTitle';
+import { useState, useEffect, useCallback } from "react";
+import BootName from "./BootName";
+import SplashSubTitles from "./SplashSubTitles";
+import PowerToggle from "./PowerToggle";
+import styles from "./Splash.module.css";
+import InstructionTitle from "./InstructionTitle";
 
-import { useInViewport } from '@/hooks/useInViewport';
+import { useInViewport } from "@/hooks/useInViewport";
+import { Sections } from "@/constants";
 // import { useRouter } from 'next/router';
-
 
 export default function Splash() {
   // const app = useRouter();
@@ -20,38 +20,47 @@ export default function Splash() {
   const [hasBooted, setHasBooted] = useState(false);
 
   const handleToggle = () => {
-    setToggle(p => !p);
+    setToggle((p) => !p);
     setTimeout(() => {
-      setPower(prev => {
+      setPower((prev) => {
         const next = !prev;
-        if (next) setHasBooted(true); 
+        if (next) setHasBooted(true);
         return next;
       });
     }, 500);
   };
 
   const continueToAbout = useCallback(() => {
-    const el = document.getElementById('about');
+    const el = document.getElementById(Sections.About);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      history.pushState(null, '', '#about');
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.pushState(null, "", `#${Sections.About}`);
     }
   }, []);
 
-  const onKey = useCallback((e: KeyboardEvent) => {
-    // ignore when typing
-    const t = e.target as HTMLElement | null;
-    if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+  const onKey = useCallback(
+    (e: KeyboardEvent) => {
+      // ignore when typing
+      const t = e.target as HTMLElement | null;
+      if (
+        t &&
+        (t.tagName === "INPUT" ||
+          t.tagName === "TEXTAREA" ||
+          t.isContentEditable)
+      )
+        return;
 
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      continueToAbout();
-    }
-  }, [continueToAbout]);
+      if (e.key === "Enter") {
+        e.preventDefault();
+        continueToAbout();
+      }
+    },
+    [continueToAbout],
+  );
 
   useEffect(() => {
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, [onKey]);
 
   // Fade scanlines with scroll, and also fade to 0 when power is off
@@ -61,41 +70,48 @@ export default function Splash() {
       const y = window.scrollY || 0;
       const progress = Math.max(0, Math.min(1, 1 - y / vh));
       const alpha = 0.25 * progress * (isPowerOn ? 1 : 0);
-      document.documentElement.style.setProperty('--scanlines-alpha', alpha.toFixed(3));
-      document.documentElement.setAttribute('data-power', isPowerOn ? 'on' : 'off');
+      document.documentElement.style.setProperty(
+        "--scanlines-alpha",
+        alpha.toFixed(3),
+      );
+      document.documentElement.setAttribute(
+        "data-power",
+        isPowerOn ? "on" : "off",
+      );
     };
     update();
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update);
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
     return () => {
-      window.removeEventListener('scroll', update);
-      window.removeEventListener('resize', update);
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
     };
   }, [isPowerOn]);
 
-  const NAME = '> Daniel Berlin';
+  const NAME = "> Daniel Berlin";
 
   return (
     <>
-      <div className={styles['splash-container']}>
-        <div className={`flex items-center ${styles['toggle-name']}`}>
+      <div className={styles["splash-container"]}>
+        <div className={`flex items-center ${styles["toggle-name"]}`}>
           <PowerToggle handleToggle={handleToggle} checked={isToggled} />
-          {(hasBooted || isPowerOn) && (
-            <BootName isPowerOn={isPowerOn} />
-          )}
+          {(hasBooted || isPowerOn) && <BootName isPowerOn={isPowerOn} />}
         </div>
 
-        {(hasBooted && isPowerOn) && (
+        {hasBooted && isPowerOn && (
           <>
             <SplashSubTitles isPowerOn={isPowerOn} name={NAME} />
-            <div className='flex w-[100%]' ref={ref}>
+            <div className="flex w-[100%]" ref={ref}>
               <InstructionTitle onActivate={continueToAbout} />
             </div>
           </>
         )}
 
         {/* Scanline overlay is scoped to splash only to avoid tinting sticky UI outside hero */}
-        <div className={`${styles['scanlines']} ${isPowerOn && styles['active']}`} aria-hidden="true" />
+        <div
+          className={`${styles["scanlines"]} ${isPowerOn && styles["active"]}`}
+          aria-hidden="true"
+        />
       </div>
     </>
   );

@@ -1,11 +1,13 @@
 .main-content {
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .about-container {
   display: flex;
   flex-direction: column;
   height: 100%;
+  height: calc(100dvh - var(--height-nav-desktop));
 }
 
 .section-title {
@@ -33,7 +35,7 @@
   justify-content: space-evenly;
   align-items: center;
   gap: clamp(16px, 4vw, 48px);
-  height: calc(100vh - var(--header-h));
+  min-height: calc(100vh - var(--height-nav-desktop));
 }
 
 .bio-left {
@@ -42,9 +44,10 @@
   padding: 5vh 2vw;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   border-radius: 20px;
-  align-items: center;
 }
 
 .bio-right {

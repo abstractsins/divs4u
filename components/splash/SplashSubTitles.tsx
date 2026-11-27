@@ -1,21 +1,20 @@
 import styles from "./SplashSubTitles.module.css";
 
+import { strings, animationControls } from "@/constants";
+
 interface Props {
   name: string;
   isPowerOn: boolean;
 }
 
 export default function SplashSubTitles({ name, isPowerOn }: Props) {
-  const lines = [
-    "> Full Stack Developer",
-    "> Solutions Engineer",
-    "> Build, Test; Deploy, Debug",
-  ];
+  const { headlines: lines } = strings.splash;
 
-  const LETTER_DELAY = 180;
-  const BOOT_PHASE_MS = 3600;
-  const LINES_START = (name.length - 1) * LETTER_DELAY + BOOT_PHASE_MS + 400;
-  const LINE_STAGGER = 280;
+  const {
+    subtitles: { LETTER_DELAY, BOOT_PHASE_MS, LINES_START_VAR, LINE_STAGGER },
+  } = animationControls.hero;
+  const LINES_START =
+    (name.length - 1) * LETTER_DELAY + BOOT_PHASE_MS + LINES_START_VAR;
 
   return (
     <div className={styles["sub-container"]}>

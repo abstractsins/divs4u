@@ -24,12 +24,14 @@ const imgWidthWeather = 5472;
 const imgHeightWeather = 3648;
 
 import ProjectMajorCard from "./Projects/ProjectMajorCard";
+import { Sections } from "@/constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
-  useEnterToNext("projects", "contact");
+  useEnterToNext(Sections.About, Sections.Projects, Sections.Contact);
 
+  // GSAP Animation
   useEffect(() => {
     const ctx = gsap.context(() => {
       // set initial state (so it’s invisible until triggered)
@@ -142,7 +144,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className={styles["projects-container"]}>
+    <section id={Sections.Projects} className={styles["projects-container"]}>
       <h2 className={` ${styles["section-title"]}`}>Projects</h2>
       <div className={styles["projects-body"]}>
         <ProjectGainsDB id="project-1" className="projectMajorCard" />

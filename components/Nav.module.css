@@ -1,0 +1,130 @@
+.navDesktop {
+  background-color: var(--color-plum);
+  backdrop-filter: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: monospace;
+  font-weight: bold;
+  font-size: var(--font-size-lg);
+  letter-spacing: var(--letter-spacing-wide);
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+
+  gap: 50px;
+  height: var(--height-nav-desktop);
+
+  /* isolation: isolate; */
+  z-index: 2;
+}
+
+.navMobile,
+.navLinksContainer,
+.mobileNavOverlay {
+  display: none;
+}
+
+.hamburgerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-dusk);
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.hamburgerWrapper {
+  width: 20px;
+  height: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburgerLine {
+  background-color: var(--color-plum);
+  height: 2px;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: var(--font-size-lg);
+  font-size: 1.75rem;
+}
+
+@media (max-width: 768px) {
+  .navDesktop {
+    display: none;
+  }
+
+  .navMobile {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 4;
+  }
+
+  .mobileNavOverlay {
+    background-color: var(--color-plum);
+
+    flex-direction: column;
+    justify-content: space-around;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    font-family: monospace;
+    font-weight: bold;
+    font-size: var(--font-size-xlg);
+    letter-spacing: var(--letter-spacing-wide);
+
+    padding: 15px;
+    height: 100vh;
+    width: 250px;
+
+    /* opacity: 0.85; */
+    z-index: 3;
+    transition: transform 0.3s ease;
+  }
+
+  .mobileNavOverlay.hidden {
+    display: flex;
+    transform: translateX(-100%);
+  }
+
+  .mobileNavOverlay.visible {
+    display: flex;
+    transform: translateX(0);
+  }
+
+  .navLinksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .mobileNavOverlay a {
+    background-color: var(--color-slate);
+    margin: 15px;
+    border: 2px solid var(--color-slate);
+    text-align: center;
+  }
+
+  .navMobile.hidden {
+    display: none;
+  }
+
+  .navMobile.visible {
+    display: flex;
+  }
+}

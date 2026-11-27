@@ -1,21 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --color-plum: #9E1871;
+  --color-plum: #9e1871;
   --color-plum-semi: rgba(218, 32, 156, 0.62);
-  --color-mustard: #9E8A18;
-  --color-honey: #D1A625;
-  --color-eggplant: #4A233D;
-  --color-green-bright: #0ED54E;
+  --color-mustard: #9e8a18;
+  --color-honey: #d1a625;
+  --color-eggplant: #4a233d;
+  --color-green-bright: #0ed54e;
   --color-teal: #18999e;
-  --color-pink: #FB9CDB;
-  --color-blue: #3F8DF3;
-  --color-dusk: #201D30;
-  --color-ash: #3C3433;
+  --color-pink: #fb9cdb;
+  --color-pink-hot: rgb(255, 40, 154);
+  --color-blue: #3f8df3;
+  --color-dusk: #201d30;
+  --color-slate: #1d1d1dc2;
+  --color-ash: #3c3433;
 
-  --header-h: 72px;
+  --height-nav-desktop: 72px;
 
-  color-scheme: dark !important; 
+  --font-size-lg: 1.125rem;
+  --font-size-xlg: 1.5rem;
+
+  --letter-spacing-wide: 0.1em;
+
+  color-scheme: dark !important;
 }
 
 * {
@@ -45,7 +52,6 @@
   }
 }
 
-
 @media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a0a;
@@ -69,22 +75,6 @@ body {
   font-family: var(--font-mont), Arial, Helvetica, sans-serif;
 }
 
-header {
-  background-color: var(--color-plum);
-  position: sticky;
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  width: 100%;
-  height: var(--header-h);
-  top: 0;
-  z-index: 2;
-  backdrop-filter: none;
-  isolation: isolate;
-}
-
 a {
   transition: all 250ms;
   padding: 5px 10px;
@@ -93,7 +83,7 @@ a {
 
 a:hover {
   color: lightcyan;
-  background-color: #1d1d1dc2;
+  background-color: var(--color-slate);
 }
 
 a:active {
@@ -107,12 +97,11 @@ section {
   padding: 20px;
   scroll-margin-top: 60px;
   height: 100%;
-  min-height: calc(100vh - var(--header-h));
-  min-height: calc(100vh);
+  min-height: calc(100dvh - var(--height-header));
 }
 
 aside {
-  font-size: clamp(8pt, .6vw, 14pt);
+  font-size: clamp(8pt, 0.6vw, 14pt);
   filter: opacity(0.6);
 }
 
